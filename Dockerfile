@@ -26,9 +26,9 @@ RUN apt-get update && \
 
 ENV LANG en_US.UTF-8
 
-COPY ssh-entrypoint.sh /usr/local/bin/
-RUN ln -s usr/local/bin/ssh-entrypoint.sh / # backwards compat
-ENTRYPOINT ["ssh-entrypoint.sh"]
+COPY ["ssh-entrypoint.sh","/usr/local/bin/ssh-entrypoint.sh"]
+
+ENTRYPOINT ["/usr/local/bin/ssh-entrypoint.sh"]
 
 EXPOSE 22 80 443
 CMD    ["/usr/sbin/sshd", "-D"]
