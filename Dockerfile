@@ -28,3 +28,4 @@ RUN apt-get update && \
 
 ENV LANG en_US.UTF-8
 EXPOSE 22 80 443
+CMD    ["/usr/sbin/sshd", "-D"]
