@@ -31,6 +31,6 @@ if [ -z "$UBUNTU_PW" ]; then
 fi
 
 useradd -u 1000 -G users,sudo,root -d /home/$UBUNTU_USER --shell /bin/bash -m $UBUNTU_USER && \
-usermod -p $UBUNTU_PW $UBUNTU_USER
+echo "$UBUNTU_USER:$UBUNTU_PW" | chpasswd
 
 exec "$@"
