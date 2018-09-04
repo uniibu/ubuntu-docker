@@ -28,6 +28,8 @@ ENV LANG en_US.UTF-8
 
 COPY ["ssh-entrypoint.sh","/usr/local/bin/ssh-entrypoint.sh"]
 
+RUN chmod +x /usr/local/bin/ssh-entrypoint.sh
+
 ENTRYPOINT ["/usr/local/bin/ssh-entrypoint.sh"]
 
 EXPOSE 22 80 443
